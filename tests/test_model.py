@@ -10,3 +10,11 @@ class BookingTest(TestCase):
             inventory=100
         )
         self.assertEqual(str(item), 'icecream')
+    
+    def test_get_booking(self):
+        booking = Booking.objects.create(
+            name="Frida",
+            no_of_guests=5
+        )
+
+        self.assertEqual(str(booking), 'Frida')

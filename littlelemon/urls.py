@@ -16,10 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from djoser.views import UserViewSet
+
+
+
+
+router = DefaultRouter(trailing_slash=False)
+router.register("users", UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('restaurant/', include('restaurant.urls')),
-    path('auth/', include('djoser.urls')),
+     path('auth/', include(router.urls)),
     path('auth/', include('djoser.urls.authtoken')),
 ]

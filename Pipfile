@@ -5,10 +5,11 @@ name = "pypi"
 
 [packages]
 django = "*"
-psycopg2-binary = "*"
 django-environ = "*"
 djoser = "*"
 djangorestframework = "*"
+django-filter = "*"
+mysqlclient = "*"
 
 [dev-packages]
 
